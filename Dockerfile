@@ -18,6 +18,7 @@ RUN set -e; \
     git \
     locales \
     ca-certificates \
+    openssh-server \
     curl \
     zip \
     memcached \
@@ -100,7 +101,8 @@ RUN /bin/bash -l -c "gem install --no-document compass"
 RUN npm install -g gulp
 RUN npm install -g bower
 
+RUN export PATH=~/.local/bin:$PATH
 # Clean
-RUN apt-get purge -y --auto-remove && apt-get clean all && rm -rf /var/lib/apt/ && /etc/init.d/memcached start && php -v
+# RUN apt-get purge -y --auto-remove && apt-get clean all && rm -rf /var/lib/apt/ && /etc/init.d/memcached start && php -v
 
-CMD /sbin/my_init
+# CMD /sbin/my_init
