@@ -101,7 +101,7 @@ RUN /bin/bash -l -c "gem install --no-document compass"
 RUN npm install -g gulp
 RUN npm install -g bower
 
-RUN export PATH=~/.local/bin:$PATH
+RUN  echo "source /etc/profile" >> /root/.bashrc
 # Clean
 # RUN apt-get purge -y --auto-remove && apt-get clean all && rm -rf /var/lib/apt/ && /etc/init.d/memcached start && php -v
 
