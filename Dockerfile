@@ -54,9 +54,9 @@ RUN set -e; \
     # Install MongoDB
     pecl channel-update pecl.php.net && \
     pecl install channel://pecl.php.net/geospatial-0.2.0 && \
-    pecl install mongodb && echo "extension=mongodb.so" > /etc/php/7.3/mods-available/mongodb.ini && \
     pecl install stats-2.0.3 && echo "extension=stats.so" > /etc/php/7.3/mods-available/stats.ini && \
-    phpenmod -v 7.3 mongodb zip memcache xdebug && \
+    pecl install mongodb && echo "extension=mongodb.so" > /etc/php/7.3/mods-available/mongodb.ini && \
+    phpenmod -v 7.3 stats mongodb zip memcache xdebug && \
     # Install Maxmind
     # mkdir -p /usr/local/share/maxmind && \
     # curl -s -L -C - "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" -o /usr/local/share/maxmind/GeoLite2-City.mmdb.gz && \
