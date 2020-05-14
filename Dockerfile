@@ -15,6 +15,7 @@ RUN set -e; \
     # echo "deb http://packages.blackfire.io/debian any main" | tee /etc/apt/sources.list.d/blackfire.list && \
     apt-get update && apt-get install -y --allow-unauthenticated --no-install-recommends \
     curl \
+    imagemagick \
     git \
     locales \
     ca-certificates \
@@ -46,6 +47,7 @@ RUN set -e; \
     php7.3-zip \
     php7.3-yaml \
     php7.3-mysql \
+    php7.3-imagick \
     nginx \
     # blackfire-agent blackfire-php \
     # mongodb extension requirement
