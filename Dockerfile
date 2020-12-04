@@ -1,5 +1,5 @@
 # PHP 7.3 image with php cli, fpm, memcache, maxmind, mongo and blackfire extensions
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:latest-amd64
 # FROM php:7.3
 
 # Set the env variable DEBIAN_FRONTEND to noninteractive
@@ -66,7 +66,7 @@ RUN set -e; \
     # useradd nginx && mkdir -p /var/lib/php/session && chgrp nginx /var/lib/php/session && \
     # xdebug log dir
     # test ! -e /var/log/xdebug && mkdir /var/log/xdebug && chown nginx:nginx /var/log/xdebug && \
-    curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin  && \
+    curl -sS https://getcomposer.org/installer | php -- --filename=composer --version=1.9.0 --install-dir=/usr/local/bin && \
     composer global require hirak/prestissimo && \
     # Set locales
     locale-gen en_US && \
