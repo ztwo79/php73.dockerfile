@@ -111,4 +111,3 @@ RUN  echo "source /etc/profile" >> /root/.bashrc
 # Clean
 # RUN apt-get purge -y --auto-remove && apt-get clean all && rm -rf /var/lib/apt/ && /etc/init.d/memcached start && php -v
 
-# CMD /sbin/my_init
