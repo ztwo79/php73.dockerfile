@@ -66,7 +66,7 @@ RUN set -e; \
     # useradd nginx && mkdir -p /var/lib/php/session && chgrp nginx /var/lib/php/session && \
     # xdebug log dir
     # test ! -e /var/log/xdebug && mkdir /var/log/xdebug && chown nginx:nginx /var/log/xdebug && \
-    curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin  && \
+    curl -sS https://getcomposer.org/installer | php -- --filename=composer --version=1.9.0 --install-dir=/usr/local/bin && \
     composer global require hirak/prestissimo && \
     # Set locales
     locale-gen en_US && \
@@ -86,7 +86,7 @@ RUN apt-get install -y apt-transport-https ca-certificates && \
 # RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 # composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.9.0
 
 # install RVM, Ruby, and Bundler
 RUN apt install build-essential curl nodejs
