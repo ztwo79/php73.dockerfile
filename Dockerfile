@@ -86,7 +86,7 @@ RUN apt-get install -y apt-transport-https ca-certificates && \
 # RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 # composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.9.0
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # install RVM, Ruby, and Bundler
 RUN apt install build-essential curl nodejs
