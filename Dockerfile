@@ -1,5 +1,5 @@
 # PHP 7.3 image with php cli, fpm, memcache, maxmind, mongo and blackfire extensions
-FROM phusion/baseimage:latest
+FROM phusion/baseimage:latest-amd64
 # FROM php:7.3
 
 # Set the env variable DEBIAN_FRONTEND to noninteractive
