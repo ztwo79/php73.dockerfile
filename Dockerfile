@@ -66,7 +66,7 @@ RUN set -e; \
     # useradd nginx && mkdir -p /var/lib/php/session && chgrp nginx /var/lib/php/session && \
     # xdebug log dir
     # test ! -e /var/log/xdebug && mkdir /var/log/xdebug && chown nginx:nginx /var/log/xdebug && \
-    curl -sS https://getcomposer.org/installer | php -- --filename=composer --version=1.9.0 --install-dir=/usr/local/bin  && \
+    curl -sS https://getcomposer.org/installer | php -- --filename=composer --version=1.9.0 --install-dir=/usr/local/bin && \
     composer global require hirak/prestissimo && \
     # Set locales
     locale-gen en_US && \
@@ -89,9 +89,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 RUN curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 RUN \curl -L https://get.rvm.io | bash -s stable
+RUN /bin/bash -l -c "rvm requirements"
 RUN /bin/bash -l -c "rvm install 2.6"
 RUN /bin/bash -l -c "rvm use 2.6 --default"
-RUN /bin/bash -l -c "rvm requirements"
 
 # sass / compass
 # RUN gem install sass
@@ -107,4 +107,3 @@ RUN npm install -g bower
 RUN  echo "source /etc/profile" >> /root/.bashrc
 # Clean
 # RUN apt-get purge -y --auto-remove && apt-get clean all && rm -rf /var/lib/apt/ && /etc/init.d/memcached start && php -v
-
